@@ -44,7 +44,7 @@ export default function SimpleApp({ deck }: SimpleAppProps) {
         {activeCards.map((card) => (
           <img
             id={card.name}
-            src={"/data/images/" + card.imageName}
+            src={"./data/images/" + card.imageName}
             className={
               activeCards.length > 1
                 ? cardStyle.doubleImage
@@ -66,7 +66,7 @@ export default function SimpleApp({ deck }: SimpleAppProps) {
         <Button
           className={buttonStyle.buttonStyle}
           style={{
-            backgroundImage: "url(/data/planeswalker.png)",
+            backgroundImage: "url(./data/planeswalker.png)",
             backgroundColor: "grey",
             backgroundSize: "cover",
           }}
