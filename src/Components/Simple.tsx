@@ -1,6 +1,6 @@
 import { Button } from "@fluentui/react-components";
 import { simpleCardStyle, basicButton } from "../styles";
-import { act, useEffect, useState } from "react";
+import { useState } from "react";
 import { PlanarCard } from "../types";
 
 interface SimpleAppProps {

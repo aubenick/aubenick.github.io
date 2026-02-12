@@ -4,7 +4,7 @@ import * as fs from "fs";
 import * as path from "path";
 import axios from "axios";
 import { PlanarCard } from "./types.js";
-import cardData from "../data/cardData.json";
+import cardData from "../public/data/cardData.json";
 
 export function newDeck() {
   const cards = cardData as PlanarCard[];
