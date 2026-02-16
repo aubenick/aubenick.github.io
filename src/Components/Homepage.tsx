@@ -2,7 +2,7 @@ import { Button, makeStyles, shorthands } from "@fluentui/react-components";
 import { homeButtonStyles } from "../styles";
 import { useNavigate } from "react-router-dom";
 
-export default function App() {
+export default function Homepage() {
   const navigate = useNavigate();
   const styles = homeButtonStyles();
 
