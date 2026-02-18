@@ -27,29 +27,38 @@ export default function SimpleApp({ deck }: SimpleAppProps) {
   console.log("next: " + cardDeck[0].name);
   console.log("last: " + cardDeck[cardDeck.length - 1].name);
 
+  let i = -1;
+
   return (
     <div
       style={{
+        border: "3px solid hotPink",
         display: "flex",
         alignItems: "center",
-        height: "100vh",
+        height: "99svh",
+        width: "99svw",
       }}
     >
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
+          position: "relative",
+          border: "3px solid lightBlue",
+          width: "100%",
+          height: "99svh",
+          overflow: "hidden",
         }}
       >
-        {activeCards.map((card) => (
+        {activeCards.map((card, i) => (
           <img
             id={card.name}
             src={"./data/images/" + card.imageName}
-            className={
-              activeCards.length > 1
-                ? cardStyle.doubleImage
-                : cardStyle.singleImage
-            }
+            className={cardStyle.simpleCards}
+            style={{
+              zIndex: activeCards.length - i,
+              top: `${i * (25 - activeCards.length * 3)}%`, // Positive offset downward
+              left: `${i * 4}%`,
+              maxHeight: `${80 - activeCards.length * 5}vh`,
+            }}
           />
         ))}
       </div>

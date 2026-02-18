@@ -23,25 +23,21 @@ export const homeButtonStyles = makeStyles({
 });
 
 export const simpleCardStyle = makeStyles({
-  singleImage: {
-    maxHeight: "80vh",
+  simpleCards: {
     width: "auto",
     borderRadius: "4%",
-    border: "2px solid black",
-  },
-  doubleImage: {
-    maxHeight: "50vh",
-    width: "auto",
-    borderRadius: "4%",
-    border: "2px solid black",
-    padding: "20px",
+    border: "2px solid green",
+    position: "absolute",
+    ":hover": {
+      zIndex: "100 !important",
+    },
   },
 });
 
 export const basicButton = makeStyles({
   buttonStyle: {
-    width: "200px",
-    height: "200px",
+    width: "5svw",
+    aspectRatio: "1/1",
     borderRadius: "8px",
     margin: "10px",
   },
