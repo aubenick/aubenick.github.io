@@ -24,17 +24,15 @@ export const homeButtonStyles = makeStyles({
 
 export const simpleCardStyle = makeStyles({
   singleImage: {
-    maxHeight: "80vh",
+    maxHeight: "60vh",
     width: "auto",
     borderRadius: "4%",
-    border: "2px solid black",
-  },
-  doubleImage: {
-    maxHeight: "50vh",
-    width: "auto",
-    borderRadius: "4%",
-    border: "2px solid black",
-    padding: "20px",
+    border: "2px solid green",
+    position: "absolute",
+
+    ":hover": {
+      zIndex: "100 !important",
+    },
   },
 });
 
