@@ -13,7 +13,7 @@ export default function SimpleApp({ deck }: SimpleAppProps) {
   console.log(deck.length);
   const [cardDeck, setCardDeck] = useState<PlanarCard[]>(deck);
   const [activeCards, setActiveCard] = useState<PlanarCard[]>(
-    cardDeck.splice(0, 2),
+    cardDeck.splice(0, 1),
   );
 
   function onPlaneswalk() {
@@ -27,7 +27,7 @@ export default function SimpleApp({ deck }: SimpleAppProps) {
   console.log("next: " + cardDeck[0].name);
   console.log("last: " + cardDeck[cardDeck.length - 1].name);
 
-  let zIndex = activeCards.length;
+  let i = -1;
 
   return (
     <div
@@ -41,29 +41,26 @@ export default function SimpleApp({ deck }: SimpleAppProps) {
     >
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
           position: "relative",
+          border: "3px solid lightBlue",
+          width: "100%",
+          height: "99svh",
+          overflow: "hidden",
         }}
       >
-        {activeCards.map(
-          (card) => (
-            zIndex--,
-            console.log(zIndex),
-            (
-              <img
-                id={card.name}
-                src={"./data/images/" + card.imageName}
-                className={cardStyle.singleImage}
-                style={{
-                  zIndex: zIndex,
-                  top: -800 + (activeCards.length - zIndex) * 200,
-                  left: (activeCards.length - zIndex) * 25,
-                }}
-              />
-            )
-          ),
-        )}
+        {activeCards.map((card, i) => (
+          <img
+            id={card.name}
+            src={"./data/images/" + card.imageName}
+            className={cardStyle.simpleCards}
+            style={{
+              zIndex: activeCards.length - i,
+              top: `${i * (25 - activeCards.length * 3)}%`, // Positive offset downward
+              left: `${i * 4}%`,
+              maxHeight: `${80 - activeCards.length * 5}vh`,
+            }}
+          />
+        ))}
       </div>
       <div
         style={{
